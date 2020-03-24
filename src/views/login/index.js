@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 
 class Login extends Component {
 
-  render () {
+  render() {
     return (
       <div className="LoginPage">
-          login
+        <div className="login-container">
+          <img src="../../static/images/login_bgimg.png" alt="#" />
+        </div>
       </div>
     );
   }
