@@ -4,8 +4,8 @@ class Home extends Component {
 
   render () {
     return (
-      <div>
-          homegit1111
+      <div className="login-container">
+          <img src="/static/images/login_bgimg.png" alt="#"/>
       </div>
     );
   }
