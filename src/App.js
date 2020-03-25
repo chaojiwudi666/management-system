@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route, BrowserRouter as Router, Redirect } from 'react-router-dom';
 import Home from "./views/home";
 import Login from "./views/login";
+import './App.scss'
 export default function App() {
   return (
     <div className="root">
