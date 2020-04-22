@@ -23,4 +23,6 @@ class Home extends Component {
 
 }
 
-export default Home;
+export default connect(
+  mapState, mapDispatch
+)(withRouter(Home));

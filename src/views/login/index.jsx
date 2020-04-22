@@ -1,8 +1,18 @@
-import React, { Component } from 'react';
+
 import bgImg from '../../static/images/login_bgimg.png';
 import './index.scss';
-
+import React , { useEffect,useRef, useState } from 'react';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { Form, Input, Button, Checkbox ,Radio  } from 'antd';
+//4.1对应映射的字段 
+const mapState = ({ login }) => ({
+
+});
+//4.2需要使用的http api接口 和 需要使用的方法
+const mapDispatch = ({ login }) => ({
+
+});
 const layout = {
   labelAlign:'left',
   labelCol: {
@@ -23,19 +33,16 @@ const onFinish = values => {
 const onFinishFailed = errorInfo => {
   console.log('Failed:', errorInfo);
 };
-
-class Login extends Component {
+const onChange = e => {
+  console.log('radio checked', e.target.value);
+  this.setState({
+    value: e.target.value,
+  });
+}; 
+const Login = (props) => {
   state = {
     value: 1,
   };
-  onChange = e => {
-    console.log('radio checked', e.target.value);
-    this.setState({
-      value: e.target.value,
-    });
-  };
-  render() {
-
     return (
       <div className="loginPage">
         <div className="wapper">
@@ -100,8 +107,10 @@ class Login extends Component {
 
       </div>
     );
-  }
+  
 
 }
 
-export default Login;
+export default connect(
+  mapState, mapDispatch
+)(withRouter(Login));
