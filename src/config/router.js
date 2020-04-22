@@ -1,18 +1,19 @@
-const myRoute=[{
-  key: '/login',
-  name: 'login',
-  path: '/login',
-  exact: true,
-  component: 'views/Login',
-  model: 'store/login'
-}, {
-  key: '/home',
-  name: 'home',
-  path: '/home',
-  exact: true,
-  component: 'views/home',
-  model: 'store/home'
-}]
+import topRouter from './cloudtop.router';
+const todo = {
+  key: 'todo',
+  name: 'todo',
+  path: null,
+  children: [{
+    key: '/todo/manager',
+    name: 'todoManager',
+    path: '/todo/manager',
+    exact: true,
+    component: 'views/ToDo',
+    model: 'store/todo'
+  }]
+};
 
-
-export default myRoute;
+export default [
+  todo,
+  topRouter
+];
